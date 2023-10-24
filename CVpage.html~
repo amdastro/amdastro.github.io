@@ -1,0 +1,117 @@
+
+<!DOCTYPE html>
+<!--
+    Plain-Academic by Vasilios Mavroudis
+    Released under the Simplified BSD License/FreeBSD (2-clause) License.
+    https://github.com/mavroudisv/plain-academic
+-->
+
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+  <link href='https://fonts.googleapis.com/css?family=Oswald:700' rel='stylesheet' type='text/css'>
+  <title>Andrea | CV</title>
+  <style>
+    img {
+     max-width:100%;
+    max-height:100%;
+    }
+  	body {
+    font-family: Georgia, serif;
+    font-size: 16px;
+    }
+   </style>
+</head>
+
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-TSSW11HK0T"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-TSSW11HK0T');
+</script>
+<body>
+
+
+<!-- Navigation -->
+	<nav class="navbar navbar-inverse navbar-static-top" role="navigation">
+	  <div class="container">
+		<div class="navbar-header">
+		  <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+						<span class="sr-only">Toggle navigation</span>
+						<span class="icon-bar"></span>
+						<span class="icon-bar"></span>
+						<span class="icon-bar"></span>
+					</button>
+		</div>
+
+		<!-- Collect the nav links, forms, and other content for toggling -->
+		<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+		  <ul class="nav navbar-nav">
+		  <li><a href="./">Home</a></li>
+		  <li><a href="research">Research</a></li> 
+                  <li><a href="teaching">Teaching</a></li>
+                  <li><a href="scicomm">Science Communication</a></li>
+                  <li><a href="aboutme">About me</a></li> 
+		  <li><a href="CVpage">CV</a></li> 
+		  </ul>
+		</div>
+	  </div>
+	</nav>
+  
+  <!-- Page Content -->
+    <div class="container">
+
+        <div class="row">
+
+            <!-- Entries Column -->
+            <div class="col-md-8">
+              <!--To make the CV pdf render all pages, upload to drive, get the share link, modify the "view" to "preview" in the url. 
+		Replacing my existing file (with same name) in the drive updates the CV.-->
+			    <center>
+			       <!-- <h3>CV</h3>-->
+			       <iframe id="theFrame"
+				       src="https://drive.google.com/file/d/16LQjPs8ASnv00KiNcOjpTfDme5B3pPhE/preview?usp=sharing" 
+			               width="100%" 
+			               height="1000px"
+				       >
+					</iframe>
+			 <!-- <object data="CV_ADerdzinski.pdf" width="90%" height="1000px">
+			      </object>-->
+
+			  
+			    </center>
+            
+        	</div>
+
+            	            <!-- Contact Info on the Sidebar -->
+            <div class="col-md-4">
+                <div style="sans-serif; font-size: 30px; font-weight: 400 "><b>Andrea Derdzinski</b></div>
+                    <p style="font-size: 16px;" >(she)</p>
+                    <!--<span style=font-family:Courier New, monospace;></span>-->
+                    <!--&#128231;-->
+                    <p style="font-size: 16px;">  email: andrea (at) ics.uzh.ch<br>
+                    <a href="https://ui.adsabs.harvard.edu/search/fq=%7B!type%3Daqp%20v%3D%24fq_database%7D&fq_database=database%3A%20astronomy&p_=0&q=author%3A(%22Derdzinski%2C%20A%22)&sort=date%20desc%2C%20bibcode%20desc">NASA ADS Search</a><br>
+                    <a href="https://orcid.org/0000-0001-9880-8929"> ORCiD</a><br>
+                    <a href="CV_ADerdzinski.pdf">CV (pdf)</a>
+                </p>
+            </div>
+
+
+
+    </div>
+    <!-- /.container -->
+    
+    
+</body>
+
+</html>
+
+
+
