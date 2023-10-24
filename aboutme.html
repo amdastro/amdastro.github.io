@@ -10,10 +10,24 @@
   <link href='https://fonts.googleapis.com/css?family=Oswald:700' rel='stylesheet' type='text/css'>
  <title>Andrea | About me</title>
  <style>
-       img{
+    img{
     max-width:100%;
     max-height:100%;
     }
+    figure {
+    display: inline-block;
+    margin: 20px; /* adjust as needed */
+    display: block;
+  }
+  figure img {
+    vertical-align: top;
+    display: block;
+    margin: auto
+  }
+  figure figcaption {
+    text-align: center;
+    color:#5C5C5C;
+  }
   body {
     font-family: Georgia, serif;
     font-size: 16px;
@@ -76,9 +90,17 @@
 	            
 	            <div style="text-align: center">
 	            <p>
-				<img class="" src = "img/kayakCA.jpg" alt="" width="350" title=""> </p>
-		    <p> <img class="" src="img/daytona.jpg" alt="" width="350" title="Exploring the Swiss Alps on my Triumph Daytona 675 aka Honeybee"></p>
-		    <p> <img class="" src="img/CAcoast.jpg" alt="" width="350" title="I'm often challenging how much camping gear I can strap to a bike, this time along the Northern California coast"></p>
+
+                <figure>
+                  <img class="" src="daytona.jpg" alt="" width="350" title="">
+                  <figcaption>Exploring the Swiss Alps on a Triumph Daytona 675 aka Honeybee</figcaption>
+                </figure>
+
+                <figure>
+                  <img class="" src="CAcoast.jpg" alt="" width="350" title="">
+                  <figcaption>I'm often challenging how much camping gear I can strap to a bike, this time along the Northern California coast</figcaption>
+                </figure>
+		
 			 	</div>
 
 			</div>

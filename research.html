@@ -22,7 +22,7 @@
   	}
 	.button {
 	  border: none;
-	  border-radius: 15px;
+	  border-radius: 20px;
 	  color: white;
 	  padding: 2px 6px;
 	  text-align: center;
@@ -38,12 +38,27 @@
 	  background-color: #F2F2F2; 
 	  color: black; 
 	  border: 2px solid #0489B1;
+    border-radius: 20px;
 	}
 
 	.button1:hover {
 	  background-color: #A9D0F5;
 	  color: blue;
 	}
+  figure {
+    display: inline-block;
+    margin: 20px; /* adjust as needed */
+    display: block;
+  }
+  figure img {
+    vertical-align: top;
+    display: block;
+    margin: auto
+  }
+  figure figcaption {
+    text-align: center;
+    color:#5C5C5C;
+  }
 	body {
   	font-family: Georgia, serif;
   	font-size: 16px;
@@ -118,7 +133,11 @@ ISSI Doppler ranging -->
 
                 	<p style="font-size: 24px; color:#0489B1;"> <b> Formation of black hole inspirals in accretion disks around supermassive black holes </b> 
                 	  <a href="https://arxiv.org/abs/2205.10382" target="_blank"><button class="button button1"><span style="color:#086A87; font-size: 18px"> arXiv:2205.10382</span></button></a></p>
-                	  <p style="text-align: center;"><img src="AGNcartoon.png" alt="Not to scale!" title=""></p>
+
+                      <figure><img src="AGNcartoon.png" alt="Not to scale!" title="">
+                        <figcaption>cartoon of an AGN</figcaption>
+                      </figure>
+                	
                 	<p>Star formation can occur in massive accretion disks in Active Galactic Nuclei, producing unique stellar populations which seed sources of gravitational waves, including extreme mass ratio inspirals. In this work I develop a comprehensive model of the formation of these sources, starting with solutions for the structure of accretion disks that become gravitationally unstable. I derive the properties of in-situ stellar populations, calculate the subsequent evolution of stars in the disk as they migrate and accrete surrounding gas, and determine how many stars eventually coalesce with the central massive black hole. </p>
                 	<p>
                 	This work demonstrates the significance of this formation channel, quantifying how <span class="emph"> low-frequency gravitational wave sources  born in accretion disks may constitute a substantial fraction of detected events</span>.</p>
@@ -143,10 +162,12 @@ color:#086A87; font-size: 18px"> arXiv:2203.06016</span></button></a></p>
                         <a href="https://www.elisascience.org/articles/lisa-consortium"><img class="" src="Logo_LISA_Consortium.png" alt="" width="120" title=""></a></p>
                         <p> I am an active member of the LISA Astrophysics Working Group in the <a href="https://lisa.pages.in2p3.fr/consortium-userguide/g_lsg.html">LISA Science
  Group</a>. Our white paper, recently published in <a href="https://link.springer.com/article/10.1007/s41114-022-00041-y">Living Reviews in Relativity</a>, outlines the capabilities of the LISA mission for driving astrophysical discoveries.  </p>
-                        <p style="text-align: center; font-size: 16px;">
-                                <b>Gas morphology of an accretion disk with an embedded 'black hole'</b><br>
-                                <img class="" src="discsim.png" alt="" width="350" title="the black hole is modeled as a sm
-oothed, Newtonian point-mass potential"></p>
+                        
+                      <figure>
+                        <img src="discsim.png" class="center" alt="" width="350" title="the black hole is modeled as a smoothed, Newtonian point-mass potential">
+                        <figcaption>Gas morphology of an accretion disk with an embedded 'black hole'</figcaption>
+                      </figure>
+
                         <p>
                           I am currently coordinating one of the first Astro Working Group collaborative projects on a simulation comparison for black hole binary evolution in accretion disks. Here is an example of the surface density of an accretion disk with an embedded perturber, obtained from a 2-dimensional simulation using <a href="https://arxiv.org/abs/1605.03577">DISCO</a>. As the BH orbits it perturbs the gas on many scales, and resolving these perturbations is important for determining its orbital evolution. Not all simulations find the same results, so it is critical to compare our techniques to better understand the fate of this system: <i>will the binary shrink to the scale where it becomes a powerful gravitational wave source? If so, what will its orbital properties be? Can the gas dynamics produce informative electromagnetic or graviational wave signatures?</i>
 			  This work is motivated by black hole binaries that we expect LISA to detect,  but it is also applicable to studies of planetary migration, where the same process occurs but at a different scale.
@@ -174,7 +195,13 @@ oothed, Newtonian point-mass potential"></p>
             		<a href="https://arxiv.org/abs/2206.05292" target="_blank"><button class="button button1"><span style="color:#086A87; font-size: 18px"> arXiv:2206.05292</span></button></a>
                 	<a href="https://arxiv.org/abs/2005.11333" target="_blank"><button class="button button1"><span style="color:#086A87; font-size: 18px"> arXiv:2005.11333</span></button></a>
                 	<a href="https://arxiv.org/abs/1810.03623" target="_blank"><button class="button button1"><span style="color:#086A87; font-size: 18px"> arXiv:1810.03623</span></button></a></p>
-                	<p style="text-align:center;"><img class="" src="torqueevol.png" alt="" width="600" title=""></p>
+
+                  <figure>
+                	<img class="" src="torqueevol.png" alt="" width="600" title="">
+                  <figcaption>Comparing gas torques during a gravitational wave inspiral
+                  </figcaption>
+                  </figure>
+
                 	<p>Gas-embedded black hole inspirals experience torques from their environment that are sensitive to poorly-constrained gas properties. With a suite of hydrodynamical simulations, I find that these torques can impart unique imprints in the gravitational waveforms, which presents an opportunity to <span class="emph">probe accretion disks solely with gravitational waves</span>. 
                 	</p>
                 	<p>
@@ -215,9 +242,12 @@ oothed, Newtonian point-mass potential"></p>
 
             		<p style="font-size: 24px; color:#0489B1">  <b> The role of radiative shocks for dust formation in novae </b> 
                 	<a href="https://arxiv.org/abs/1610.02401" target="_blank"><button class="button button1"><span style="color:#086A87; font-size: 18px"> arXiv:1610.02401</span></button></a></p>
-                	<p style="text-align: center; font-size: 16px;">
-			  <b>Schematic of nova ejecta: different viewing angles explain observational diversity</b><br>
-			  <img class="" src="nova.png" width="500" alt="" title=""></p>
+
+                  <figure>
+			            <img class="" src="nova.png" width="600" alt="" title="">
+                  <figcaption>Schematic of nova ejecta: different viewing angles explain observational diversity</figcaption>
+                  </figure>
+
                 	<p>
                 	Increasing evidence supports that shocks are ubiquitous in nova outflows and are responsible for powering nova emission across the electromagnetic spectrum. In this work I showed that these shocks can be <em>radiative</em>, producing regions in the ejecta that compress and cool rapidly, which creates prime sites for dust formation within the hot, ionized ejecta. This <span class="emph">explains the puzzle of early dust formation</span> in these violent eruptions and presents testable observational implications - check out our <a href="https://arxiv.org/abs/1903.08134">Astro2020 white paper</a>.
                 	</p>
