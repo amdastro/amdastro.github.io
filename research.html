@@ -13,42 +13,56 @@
     max-width:100%;
     max-height:100%;
     }
-  	.project_last {
+    .project_last {
      margin-bottom: 1cm;
-  	}
-  	.emph {
-  		font-style: italic;
-  		font-weight: bold;
-  		color:#DD663C;
-  	}
-	.button {
-	  border: none;
-	  border-radius: 15px;
-	  color: white;
-	  padding: 2px 6px;
-	  text-align: center;
-	  text-decoration: none;
-	  display: inline-block;
-	  font-size: 16px;
-	  margin: 2px 2px;
-	  transition-duration: 0.4s;
-	  cursor: pointer;
-	}
+    }
+    .emph {
+      font-weight: bold;
+      color:#035676}
+    }
+  .button {
+    border: none;
+    border-radius: 20px;
+    color: white;
+    padding: 2px 6px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 2px 2px;
+    transition-duration: 0.4s;
+    cursor: pointer;
+  }
 
-	.button1 {
-	  background-color: #F2F2F2; 
-	  color: black; 
-	  border: 2px solid #0489B1;
-	}
+  .button1 {
+    background-color: #F2F2F2; 
+    color: black; 
+    border: 2px solid #0489B1;
+    border-radius: 20px;
+  }
 
-	.button1:hover {
-	  background-color: #A9D0F5;
-	  color: blue;
-	}
-	body {
-  	font-family: Georgia, serif;
-  	font-size: 16px;
-	}
+  .button1:hover {
+    background-color: #A9D0F5;
+    color: blue;
+  }
+  figure {
+    display: inline-block;
+    margin: 20px; /* adjust as needed */
+    display: block;
+  }
+  figure img {
+    vertical-align: top;
+    display: block;
+    margin: auto
+  }
+  figure figcaption {
+    text-align: center;
+    color:#5C5C5C;
+  }
+  body {
+    font-family: Georgia, serif;
+    font-size: 16px;
+  }
 </style>
  <title>Andrea | Research</title>
 </head>
@@ -67,30 +81,30 @@
 
 
 <!-- Navigation -->
-	<nav class="navbar navbar-inverse navbar-static-top" role="navigation">
-	  <div class="container">
-		<div class="navbar-header">
-		  <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
-						<span class="sr-only">Toggle navigation</span>
-						<span class="icon-bar"></span>
-						<span class="icon-bar"></span>
-						<span class="icon-bar"></span>
-					</button>
-		</div>
+  <nav class="navbar navbar-inverse navbar-static-top" role="navigation">
+    <div class="container">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+    </div>
 
-		<!-- Collect the nav links, forms, and other content for toggling -->
-		<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-		  <ul class="nav navbar-nav">
-		  <li><a href="./">Home</a></li>
-		  <li><a href="research">Research</a></li> 
+    <!-- Collect the nav links, forms, and other content for toggling -->
+    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+      <ul class="nav navbar-nav">
+      <li><a href="./">Home</a></li>
+      <li><a href="research">Research</a></li> 
                   <li><a href="teaching">Teaching</a></li>
                   <li><a href="scicomm">Science Communication</a></li>
                   <li><a href="aboutme">About me</a></li> 
-				  <li><a href="CVpage">CV</a></li> 
-		  </ul>
-		</div>
-	  </div>
-	</nav>
+          <li><a href="CVpage">CV</a></li> 
+      </ul>
+    </div>
+    </div>
+  </nav>
 
 
 <!-- Page Content -->
@@ -101,58 +115,69 @@
             <!-- Entries Column -->
             <div class="col-md-8">
                 
-                <h1 style="text-align: center;">Research</h1>	
+                <h1 style="text-align: center;">Research</h1> 
                  <div style="margin-top:3%; margin-bottom: 1cm; text-align:center; font-size: 18px"> 
-                	Here I summarize a few of my research endeavors and collaborative work.  
+                  Here I summarize a few of my research endeavors and collaborative work.  
+                </div>
+
+<!-- TO BE ADDED:
+LGWA 
+TianQin
+GW190521 
+fragmentation with GIZMO 
+ISSI Doppler ranging -->
+     
+     
+     
+              <div style="margin-top:3%; margin-bottom: 1cm; text-align:justify; font-size: 18px"> 
+
+                  <p style="font-size: 24px; color:#0489B1;"> <b> Formation of black hole inspirals in accretion disks around supermassive black holes </b> 
+                    <a href="https://arxiv.org/abs/2205.10382" target="_blank"><button class="button button1"><span style="color:#086A87; font-size: 18px"> arXiv:2205.10382</span></button></a></p>
+
+                      <figure><img src="AGNcartoon.png" alt="Not to scale!" title="">
+                        <figcaption>cartoon of an AGN</figcaption>
+                      </figure>
+                  
+                  <p>Star formation can occur in massive accretion disks in Active Galactic Nuclei, producing unique stellar populations which seed sources of gravitational waves, including extreme mass ratio inspirals. In this work I develop a comprehensive model of the formation of these sources, starting with solutions for the structure of accretion disks that become gravitationally unstable. I derive the properties of in-situ stellar populations, calculate the subsequent evolution of stars in the disk as they migrate and accrete surrounding gas, and determine how many stars eventually coalesce with the central massive black hole. </p>
+                  <p>
+                  This work demonstrates the significance of this formation channel, quantifying how <span class="emph"> low-frequency gravitational wave sources  born in accretion disks may constitute a substantial fraction of detected events</span>.</p>
+                  <p>
+                  Due to their evolution in a gaseous environment, the orbital characteristics of these systems will be substantially different from similar events that form via dynamical interactions in dry nuclei. 
+                  <span class="emph"> It is critical that we develop the framework to detect these sources and analyze their waveforms, especially because their detection will provide constraints on accretion disk environments which are spatially unresolvable to electromagnetic observations</span>.
+
+                  The model also has implications for many observational signatures from stellar populations in gas-rich galactic nuclei, which I plan to explore in follow up work. </p>
+
                 </div>
 
 
-		 
-		 
-		 
-	            <div style="margin-top:3%; margin-bottom: 1cm; text-align:justify; font-size: 18px"> 
-
-                	<p style="font-size: 24px; color:#0489B1;"> <b> Formation of black hole inspirals in accretion disks around supermassive black holes </b> 
-                	  <a href="https://arxiv.org/abs/2205.10382" target="_blank"><button class="button button1"><span style="color:#086A87; font-size: 18px"> arXiv:2205.10382</span></button></a></p>
-                	  <p style="text-align: center;"><img src="AGNcartoon.png" alt="Not to scale!" title=""></p>
-                	<p>Star formation can occur in massive accretion disks in Active Galactic Nuclei, producing unique stellar populations which seed sources of gravitational waves, including extreme mass ratio inspirals. In this work I develop a comprehensive model of the formation of these sources, starting with solutions for the structure of accretion disks that become gravitationally unstable. I derive the properties of in-situ stellar populations, calculate the subsequent evolution of stars in the disk as they migrate and accrete surrounding gas, and determine how many stars eventually coalesce with the central massive black hole. </p>
-                	<p>
-                	This work demonstrates the significance of this formation channel, quantifying how <span class="emph"> low-frequency gravitational wave sources  born in accretion disks may constitute a substantial fraction of detected events</span>.</p>
-                	<p>
-                	Due to their evolution in a gaseous environment, the orbital characteristics of these systems will be substantially different from similar events that form via dynamical interactions in dry nuclei. 
-                	<span class="emph"> It is critical that we develop the framework to detect these sources and analyze their waveforms, especially because their detection will provide constraints on accretion disk environments which are spatially unresolvable to electromagnetic observations</span>.
-
-                	The model also has implications for many observational signatures from stellar populations in gas-rich galactic nuclei, which I plan to explore in follow up work. </p>
-
-                </div>
 
 
+        
 
-
-		    
-
-		                    <div style="margin-top:3%; margin-bottom: 1cm; text-align:justify; font-size: 18px">
+                        <div style="margin-top:3%; margin-bottom: 1cm; text-align:justify; font-size: 18px">
                         <p style="font-size: 24px; color:#0489B1;"> <b> Theoretical work in preparation for a space-based gravitational wave observatory </b>
                         <a href="https://arxiv.org/abs/2203.06016" target="_blank"><button class="button button1"><span style="
 color:#086A87; font-size: 18px"> arXiv:2203.06016</span></button></a></p>
                         <p style="text-align:center;">
                         <a href="https://www.elisascience.org/articles/lisa-consortium"><img class="" src="Logo_LISA_Consortium.png" alt="" width="120" title=""></a></p>
-                        <p> I am a member of the LISA Astrophysics Working Group in the <a href="https://lisa.pages.in2p3.fr/consortium-userguide/g_lsg.html">LISA Science
- Group</a>. I contributed several sections to the first Astrophysics White Paper, which was submitted to Living Reviews in Relativity. </p>
-                        <p style="text-align: center; font-size: 16px;">
-                                <b>Gas morphology of an accretion disk with an embedded 'black hole'</b><br>
-                                <img class="" src="discsim.png" alt="" width="350" title="the black hole is modeled as a sm
-oothed, Newtonian point-mass potential"></p>
+                        <p> I am an active member of the LISA Astrophysics Working Group in the <a href="https://lisa.pages.in2p3.fr/consortium-userguide/g_lsg.html">LISA Science
+ Group</a>. Our white paper, recently published in <a href="https://link.springer.com/article/10.1007/s41114-022-00041-y">Living Reviews in Relativity</a>, outlines the capabilities of the LISA mission for driving astrophysical discoveries.  </p>
+                        
+                      <figure>
+                        <img src="discsim.png" class="center" alt="" width="350" title="the black hole is modeled as a smoothed, Newtonian point-mass potential">
+                        <figcaption>Gas morphology of an accretion disk with an embedded 'black hole'</figcaption>
+                      </figure>
+
                         <p>
-                          I am currently coordinating one of the first Astro Working Group collaborative projects on a simulation comparison for black hole binary evolution on sub-parsec scales in accretion disks. Here is an example of the surface density of an accretion disk with an embedded perturber, obtained from a 2-dimensional simulation using DISCO. As it orbits it perturbs the gas on many scales, and resolving these perturbations is important for determining its orbital evolution. Not all simulations find the same results, so it is critical to compare our techniques to better understand the fate of this system: <i>will the binary shrink to the scale where it becomes a powerful gravitational wave source? If so, what will its orbital properties be? Can the gas dynamics produce informative electromagnetic signatures?</i>
-			  This work is motivated by black hole binaries that we expect LISA to detect,  but it is also applicable to studies of planetary migration, where the same process occurs but at a different scale.
+                          I am currently coordinating one of the first Astro Working Group collaborative projects on a simulation comparison for black hole binary evolution in accretion disks. Here is an example of the surface density of an accretion disk with an embedded perturber, obtained from a 2-dimensional simulation using <a href="https://arxiv.org/abs/1605.03577">DISCO</a>. As the BH orbits it perturbs the gas on many scales, and resolving these perturbations is important for determining its orbital evolution. Not all simulations find the same results, so it is critical to compare our techniques to better understand the fate of this system: <i>will the binary shrink to the scale where it becomes a powerful gravitational wave source? If so, what will its orbital properties be? Can the gas dynamics produce informative electromagnetic or graviational wave signatures?</i>
+        This work is motivated by black hole binaries that we expect LISA to detect,  but it is also applicable to studies of planetary migration, where the same process occurs but at a different scale.
                     </p>
 
                     </div>
 
 
 
-		                       <div style="margin-top:3%; margin-bottom: 1cm; text-align:justify; font-size: 18px">
+                           <div style="margin-top:3%; margin-bottom: 1cm; text-align:justify; font-size: 18px">
 
                             <p style="font-size: 24px; color:#0489B1;"> <b> Detectability of environmental imprints and eccentricity in milliHz GWs from massive black hole binaries </b>
                                <a href="https://arxiv.org/abs/2206.05292" target="_blank"><button class="button button1"><span style="color:#086A87; font-size: 18px"> arXiv:2206.05292</span></button></a>
@@ -161,73 +186,82 @@ oothed, Newtonian point-mass potential"></p>
                         <p> The evolution of supermassive black hole binaries in gas-rich environments is widely studied for both electromagnetic search campaigns and GW predictions. For binaries that coalesce in the LISA frequency band, interaction with surrounding gas can leave imprints on the waveform, as shown by <a href="https://www.ics.uzh.ch/en/people.html">Mudit Garg</a> (UZH). Environmental interactions can also excite eccentricity in the binary, which, if measurable, can provide deeper insight into how massive black hole binaries form in their respective environments. Recently, Mudit has also shown with a full Bayesian analysis that even residual eccentricities can be measured by LISA.  </p>
                 </div>
 
-				    
-				    
-				    
-			<div style="margin-top:3%; margin-bottom: 1cm; text-align:justify; font-size: 18px"> 	
+            
+            
+            
+      <div style="margin-top:3%; margin-bottom: 1cm; text-align:justify; font-size: 18px">  
 
-            		<p style="font-size: 24px; color:#0489B1">  <b> Characteristic signatures of accretion disks in gravitational waves </b> 
-            		<a href="https://arxiv.org/abs/2206.05292" target="_blank"><button class="button button1"><span style="color:#086A87; font-size: 18px"> arXiv:2206.05292</span></button></a>
-                	<a href="https://arxiv.org/abs/2005.11333" target="_blank"><button class="button button1"><span style="color:#086A87; font-size: 18px"> arXiv:2005.11333</span></button></a>
-                	<a href="https://arxiv.org/abs/1810.03623" target="_blank"><button class="button button1"><span style="color:#086A87; font-size: 18px"> arXiv:1810.03623</span></button></a></p>
-                	<p style="text-align:center;"><img class="" src="torqueevol.png" alt="" width="600" title=""></p>
-                	<p>Gas-embedded black hole inspirals experience torques from their environment that are sensitive to poorly-constrained gas properties. With a suite of hydrodynamical simulations, I find that these torques can impart unique imprints in the gravitational waveforms, which presents an opportunity to <span class="emph">probe accretion disks solely with gravitational waves</span>. 
-                	</p>
-                	<p>
-                	Interaction with gas can be present in the waveforms of extreme or intermediate mass ratio inspirals as well as binaries of intermediate mass black holes, which was demonstrated in a recent work with <a href="https://www.ics.uzh.ch/en/people.html">Mudit Garg</a>.
-                	</p>
+                <p style="font-size: 24px; color:#0489B1">  <b> Characteristic signatures of accretion disks in gravitational waves </b> 
+                <a href="https://arxiv.org/abs/2206.05292" target="_blank"><button class="button button1"><span style="color:#086A87; font-size: 18px"> arXiv:2206.05292</span></button></a>
+                  <a href="https://arxiv.org/abs/2005.11333" target="_blank"><button class="button button1"><span style="color:#086A87; font-size: 18px"> arXiv:2005.11333</span></button></a>
+                  <a href="https://arxiv.org/abs/1810.03623" target="_blank"><button class="button button1"><span style="color:#086A87; font-size: 18px"> arXiv:1810.03623</span></button></a></p>
+
+                  <figure>
+                  <img class="" src="torqueevol.png" alt="" width="600" title="">
+                  <figcaption>Comparing gas torques during a gravitational wave inspiral
+                  </figcaption>
+                  </figure>
+
+                  <p>Gas-embedded black hole inspirals experience torques from their environment that are sensitive to poorly-constrained gas properties. With a suite of hydrodynamical simulations, I find that these torques can impart unique imprints in the gravitational waveforms, which presents an opportunity to <span class="emph">probe accretion disks solely with gravitational waves</span>. 
+                  </p>
+                  <p>
+                  Interaction with gas can be present in the waveforms of extreme or intermediate mass ratio inspirals as well as binaries of intermediate mass black holes (<span class="emph">environmental effects are relevant for more than just EMRI sources!</span>), which was demonstrated in a recent work with <a href="https://www.ics.uzh.ch/en/people.html">Mudit Garg</a>.
+                  </p>
                       
 
        
-          		</div>
+              </div>
 
 
-			
+      
 
-          		<div style="margin-top:3%; margin-bottom: 1cm; text-align:justify; font-size: 18px"> 	
+              <div style="margin-top:3%; margin-bottom: 1cm; text-align:justify; font-size: 18px">  
 
-            		<p style="font-size: 24px; color:#0489B1">  <b> Time-variable torques on BH inspirals </b> 
-                	<a href="https://arxiv.org/abs/2110.09097" target="_blank"><button class="button button1"><span style="color:#086A87; font-size: 18px"> arXiv:2110.09097</span></button></a></p>
-                	<p>
-                	My simulation studies found that torques on embedded black holes can fluctuate on short timescales. 
-                	This motivated a study with <a href="https://www.ics.uzh.ch/en/people.html">Lorenz Zwick</a> to calculate the effect of high frequency torque variability on disk-embedded binaries, which can produce <span class="emph">multiharmonic and multiband GW emission</span>. This is particularly relevant for EMRIs in turbulent accretion disks, or for more massive SMBH binaries surrounded by circumbinary disks. 
-                	</p>
+                <p style="font-size: 24px; color:#0489B1">  <b> Time-variable torques on BH inspirals </b> 
+                  <a href="https://arxiv.org/abs/2110.09097" target="_blank"><button class="button button1"><span style="color:#086A87; font-size: 18px"> arXiv:2110.09097</span></button></a></p>
+                  <p>
+                  My simulation studies found that torques on embedded black holes can fluctuate on short timescales. 
+                  This motivated a study with <a href="https://www.ics.uzh.ch/en/people.html">Lorenz Zwick</a> to calculate the effect of high frequency torque variability on disk-embedded binaries, which can produce <span class="emph">multiharmonic and multiband GW emission</span>. This is particularly relevant for EMRIs in turbulent accretion disks, or for more massive SMBH binaries surrounded by circumbinary disks. 
+                  </p>
              
-          		</div>
+              </div>
 
 
-          		<div style="margin-top:3%; margin-bottom: 1cm; text-align:justify; font-size: 18px"> 	
+              <div style="margin-top:3%; margin-bottom: 1cm; text-align:justify; font-size: 18px">  
 
-            		<p style="font-size: 24px; color:#0489B1">  <b> Supermassive black hole binary evolution in circumbinary disks </b> 
-                	<a href="https://arxiv.org/abs/1911.05506" target="_blank"><button class="button button1"><span style="color:#086A87; font-size: 18px"> arXiv:1911.05506</span></button></a></p>
-                	<p>
-                	The interaction of a binary with a surrounding gas disk leads to variable accretion and torques, which has critical implications for the evolution of supermassive black hole binaries during gas-driven hardening stages. A suite of simulations led by <a href="https://www.physics.purdue.edu/news/2021/0121_duffell_newfaculty.html">Paul Duffell</a> demonstrate how this torque is sensitive to the binary and disc parameters. These systems are prime candidates for electromagnetic signatures associated with GW emission, which you can read about in our <a href="https://arxiv.org/abs/1903.04417">Astro2020 white paper</a>.
-                	</p>
+                <p style="font-size: 24px; color:#0489B1">  <b> Supermassive black hole binary evolution in circumbinary disks </b> 
+                  <a href="https://arxiv.org/abs/1911.05506" target="_blank"><button class="button button1"><span style="color:#086A87; font-size: 18px"> arXiv:1911.05506</span></button></a></p>
+                  <p>
+                  The interaction of a binary with a surrounding gas disk leads to variable accretion and torques, which has critical implications for the evolution of supermassive black hole binaries during gas-driven hardening stages. A suite of simulations led by <a href="https://www.physics.purdue.edu/news/2021/0121_duffell_newfaculty.html">Paul Duffell</a> demonstrate how this torque is sensitive to the binary and disc parameters. These systems are prime candidates for electromagnetic signatures associated with GW emission, which you can read about in our <a href="https://arxiv.org/abs/1903.04417">Astro2020 white paper</a>.
+                  </p>
              
-          		</div>
+              </div>
 
 
-          		<div style="margin-top:3%; margin-bottom: 1cm; text-align:justify; font-size: 18px"> 	
+              <div style="margin-top:3%; margin-bottom: 1cm; text-align:justify; font-size: 18px">  
 
-            		<p style="font-size: 24px; color:#0489B1">  <b> The role of radiative shocks for dust formation in novae </b> 
-                	<a href="https://arxiv.org/abs/1610.02401" target="_blank"><button class="button button1"><span style="color:#086A87; font-size: 18px"> arXiv:1610.02401</span></button></a></p>
-                	<p style="text-align: center; font-size: 16px;">
-			  <b>Schematic of nova ejecta: different viewing angles explain observational diversity</b><br>
-			  <img class="" src="nova.png" width="500" alt="" title=""></p>
-                	<p>
-                	Increasing evidence supports that shocks are ubiquitous in nova outflows and are responsible for powering nova emission across the electromagnetic spectrum. In this work I showed that these shocks can be <em>radiative</em>, producing regions in the ejecta that compress and cool rapidly, which creates prime sites for dust formation within the hot, ionized ejecta. This <span class="emph">explains the puzzle of early dust formation</span> in these violent eruptions and presents testable observational implications - check out our <a href="https://arxiv.org/abs/1903.08134">Astro2020 white paper</a>.
-                	</p>
+                <p style="font-size: 24px; color:#0489B1">  <b> The role of radiative shocks for dust formation in novae </b> 
+                  <a href="https://arxiv.org/abs/1610.02401" target="_blank"><button class="button button1"><span style="color:#086A87; font-size: 18px"> arXiv:1610.02401</span></button></a></p>
+
+                  <figure>
+                  <img class="" src="nova.png" width="600" alt="" title="">
+                  <figcaption>Schematic of nova ejecta: different viewing angles explain observational diversity</figcaption>
+                  </figure>
+
+                  <p>
+                  Increasing evidence supports that shocks are ubiquitous in nova outflows and are responsible for powering nova emission across the electromagnetic spectrum. In this work I showed that these shocks can be <em>radiative</em>, producing regions in the ejecta that compress and cool rapidly, which creates prime sites for dust formation within the hot, ionized ejecta. This <span class="emph">explains the puzzle of early dust formation</span> in these violent eruptions and presents testable observational implications - check out our <a href="https://arxiv.org/abs/1903.08134">Astro2020 white paper</a>.
+                  </p>
              
-          		</div>
+              </div>
 
-          		<div style="margin-top:3%; margin-bottom: 1cm; text-align:justify; font-size: 18px">
-          			<br>
-          		</div>
+              <div style="margin-top:3%; margin-bottom: 1cm; text-align:justify; font-size: 18px">
+                <br>
+              </div>
 
 
             </div>
 
-                      		            <!-- Contact Info on the Sidebar -->
+                                      <!-- Contact Info on the Sidebar -->
             <div class="col-md-4">
                 <div style="sans-serif; font-size: 30px; font-weight: 400 "><b>Andrea Derdzinski</b></div>
                     
