@@ -1,0 +1,382 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Share+Tech+Mono&family=VT323&family=Fira+Mono:wght@400;700&display=swap" rel="stylesheet">
+  <title>Andrea | Research</title>
+<style>
+    :root{--bg:#0d0d0d;--bg2:#111;--panel:#131313;--border:#252525;--green:#39ff84;--green-dim:#1c6e3d;--amber:#ffa200;--cyan:#00e5ff;--magenta:#ff2d78;--purple:#bd87ff;--text:#c8c8c8;--text-dim:#555;--white:#f0f0f0;--font-mono:'Fira Mono','Courier New',monospace;--font-vt:'VT323',monospace;--font-st:'Share Tech Mono',monospace;}
+    *,*::before,*::after{box-sizing:border-box;}
+    html{scroll-behavior:smooth;}
+    body{font-family:var(--font-mono);font-size:14px;color:var(--text);background-color:var(--bg);background-image:repeating-linear-gradient(0deg,transparent,transparent 2px,rgba(255,255,255,0.01) 2px,rgba(255,255,255,0.01) 4px);margin:0;min-height:100vh;}
+    body::before{content:'';position:fixed;inset:0;background:repeating-linear-gradient(to bottom,transparent 0px,transparent 3px,rgba(0,0,0,0.12) 3px,rgba(0,0,0,0.12) 4px);pointer-events:none;z-index:9999;opacity:0.3;}
+    h1,h2,h3{font-family:var(--font-vt);color:var(--green);letter-spacing:2px;margin-top:0;}
+    p{line-height:1.8;margin-bottom:1em;}
+    ul,ol{line-height:1.8;}
+    a:link{color:var(--green);font-weight:bold;text-decoration:none;}
+    a:visited{color:var(--green-dim);}
+    a:hover{color:var(--amber);text-shadow:0 0 8px rgba(255,162,0,0.5);transition:all 0.15s;}
+    img{max-width:100%;max-height:100%;}
+    /* NAV */
+    .navbar-inverse{background-color:var(--bg2);border-bottom:1px solid var(--green-dim);border-radius:0;margin-bottom:0;box-shadow:0 2px 20px rgba(57,255,132,0.06);}
+    .navbar-inverse .navbar-brand,.navbar-inverse .navbar-nav>li>a{font-family:var(--font-st);color:var(--text-dim)!important;letter-spacing:1px;font-size:13px;transition:color 0.15s,text-shadow 0.15s;}
+    .navbar-inverse .navbar-nav>li>a:hover,.navbar-inverse .navbar-nav>.active>a{color:var(--green)!important;background-color:transparent!important;text-shadow:0 0 8px rgba(57,255,132,0.45);}
+    .navbar-nav>li:first-child>a::before{content:'~/';color:var(--green-dim);margin-right:2px;}
+    /* LAYOUT */
+    .container{max-width:960px;padding-top:32px;padding-bottom:48px;}
+    /* PANELS */
+    .content-panel{background:var(--panel);border:1px solid var(--border);border-top:2px solid var(--green-dim);padding:24px 28px;margin-bottom:16px;}
+    .panel-header{font-family:var(--font-st);font-size:11px;color:var(--text-dim);letter-spacing:2px;text-transform:uppercase;border-bottom:1px solid var(--border);padding-bottom:10px;margin-bottom:20px;}
+    .dot{display:inline-block;width:8px;height:8px;border-radius:50%;margin-right:4px;}
+    .dot-r{background:var(--magenta);}.dot-y{background:var(--amber);}.dot-g{background:var(--green);}
+    /* SIDEBAR */
+    .sidebar-panel{background:var(--panel);border:1px solid var(--border);border-top:2px solid var(--amber);padding:20px;font-size:13px;}
+    .sidebar-name{font-family:var(--font-vt);font-size:28px;color:var(--white);letter-spacing:2px;line-height:1.1;margin-bottom:4px;}
+    .sidebar-pronoun{font-family:var(--font-st);font-size:11px;color:var(--text-dim);letter-spacing:2px;margin-bottom:14px;}
+    .sidebar-links{list-style:none;padding:0;margin:0;}
+    .sidebar-links li{padding:5px 0;border-bottom:1px solid var(--border);}
+    .sidebar-links li:last-child{border-bottom:none;}
+    .sidebar-links li::before{content:'> ';color:var(--green-dim);font-family:var(--font-st);}
+    .email-field{font-family:var(--font-st);font-size:11px;color:var(--cyan);background:rgba(0,229,255,0.05);border:1px solid rgba(0,229,255,0.18);padding:6px 10px;margin:12px 0;word-break:break-all;letter-spacing:0.5px;}
+    /* PAGE TITLE */
+    .page-title{font-family:var(--font-vt);font-size:42px;color:var(--green);letter-spacing:3px;text-align:center;margin:0 0 24px;text-shadow:0 0 20px rgba(57,255,132,0.2);}
+    /* RESEARCH */
+    .section-title{font-size:16px;color:var(--purple);font-family:var(--font-mono);font-weight:bold;margin-bottom:10px;line-height:1.5;}
+    .arxiv-btn{display:inline-block;font-family:var(--font-st);font-size:11px;color:var(--cyan)!important;font-weight:normal!important;background:rgba(0,229,255,0.06);border:1px solid rgba(0,229,255,0.3);border-radius:3px;padding:2px 8px;margin:2px 4px 2px 0;letter-spacing:0.5px;text-decoration:none!important;transition:background 0.15s;}
+    .arxiv-btn:hover{background:rgba(0,229,255,0.14)!important;border-color:var(--cyan)!important;color:var(--cyan)!important;text-shadow:none!important;}
+    .research-block{margin-bottom:36px;padding-bottom:28px;border-bottom:1px solid var(--border);}
+    .research-block:last-child{border-bottom:none;}
+    figure{display:block;margin:18px 0;}
+    figure img{display:block;margin:auto;}
+    figure, .img-center {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      margin: 18px 0;
+    }
+    figure figcaption{text-align:center;color:var(--text-dim);font-size:12px;font-family:var(--font-st);letter-spacing:0.5px;margin-top:6px;}
+    /* HERO */
+    .hero-img-wrap{position:relative;margin-bottom:24px;border:1px solid var(--border);overflow:hidden;}
+    .hero-img-wrap::after{content:'[ surface_density_map.jpeg ]';position:absolute;bottom:0;left:0;right:0;background:rgba(0,0,0,0.75);color:var(--text-dim);font-family:var(--font-st);font-size:10px;padding:4px 8px;letter-spacing:1px;}
+    .hero-img-wrap img{display:block;width:100%;filter:brightness(0.9)contrast(1.05);}
+    /* ABOUT */
+    .photo-grid{display:flex;flex-wrap:wrap;gap:24px;justify-content:center;}
+    .photo-grid figure{margin:0;flex:0 0 auto;width:320px;}
+    /* VALUES */
+    .value-item{margin-bottom:28px;padding-left:16px;border-left:2px solid var(--magenta);}
+    .value-num{font-family:var(--font-vt);font-size:24px;color:var(--magenta);margin-bottom:4px;}
+    .value-header{font-size:15px;color:var(--magenta);font-weight:bold;margin-bottom:8px;font-family:var(--font-mono);}
+    /* MISC */
+    .emph{font-weight:bold;color:var(--cyan);}
+    .rainbow-text{font-weight:bold;background:linear-gradient(90deg,#ff2d78,#ffa200,#39ff84,#00e5ff,#bf5fff,#ff2d78);background-size:200% auto;-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;color:transparent;animation:shimmer 4s linear infinite;}
+    @keyframes shimmer{to{background-position:200% center;}}
+    .cursor::after{content:'█';color:var(--green);animation:blink 1s step-end infinite;font-size:0.8em;}
+    @keyframes blink{50%{opacity:0;}}
+    footer{text-align:center;padding:32px 0 16px;font-family:var(--font-st);font-size:10px;color:var(--text-dim);letter-spacing:2px;}
+    footer::before{content:'──────────────────────────────────────────────────';display:block;color:var(--border);margin-bottom:12px;overflow:hidden;}
+    @media(max-width:768px){.sidebar-panel{margin-top:24px;}.container{padding-top:20px;}}
+
+    /* ── CRT IMAGE EFFECT ─────────────────────────────────────────────────────
+       Wrap any <img> in <div class="crt-img"> for the retro CRT look.
+       Add class "heavy" for more intense desaturation + tighter scanlines.
+    ──────────────────────────────────────────────────────────────────────── */
+    .crt-img {
+      position: relative;
+      display: block;
+      line-height: 0;
+      margin: 0 auto;
+    }
+    .crt-img canvas {
+      display: block;
+      max-width: 100%;
+      image-rendering: pixelated;
+      image-rendering: crisp-edges;
+      filter:
+        grayscale(60%)
+        sepia(10%)
+        hue-rotate(60deg)
+        brightness(0.82)
+        contrast(1.15);
+      -webkit-user-drag: none;
+      user-select: none;
+      pointer-events: none;
+    }
+    .crt-img::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+      pointer-events: none;
+      background:
+        repeating-linear-gradient(
+          90deg,
+          rgba(255,80,80,0.04) 0px, rgba(255,80,80,0.04) 1px,
+          rgba(80,255,80,0.04) 1px, rgba(80,255,80,0.04) 2px,
+          rgba(80,80,255,0.04) 2px, rgba(80,80,255,0.04) 3px,
+          transparent 3px, transparent 4px
+        ),
+        repeating-linear-gradient(
+          180deg,
+          transparent 0px, transparent 2px,
+          rgba(0,0,0,0.18) 2px, rgba(0,0,0,0.18) 3px
+        ),
+        radial-gradient(ellipse at center, transparent 55%, rgba(0,0,0,0.55) 100%);
+      box-shadow: inset 0 0 40px rgba(57,255,132,0.06);
+    }
+    .crt-img.heavy canvas {
+      filter:
+        grayscale(85%)
+        sepia(40%)
+        hue-rotate(55deg)
+        brightness(0.75)
+        contrast(1.25);
+    }
+    .crt-img.heavy::after {
+      background:
+        repeating-linear-gradient(
+          90deg,
+          rgba(255,60,60,0.07) 0px, rgba(255,60,60,0.07) 1px,
+          rgba(60,255,60,0.07) 1px, rgba(60,255,60,0.07) 2px,
+          rgba(60,60,255,0.07) 2px, rgba(60,60,255,0.07) 3px,
+          transparent 3px, transparent 4px
+        ),
+        repeating-linear-gradient(
+          180deg,
+          transparent 0px, transparent 1px,
+          rgba(0,0,0,0.28) 1px, rgba(0,0,0,0.28) 3px
+        ),
+        radial-gradient(ellipse at center, transparent 40%, rgba(0,0,0,0.72) 100%);
+      box-shadow: inset 0 0 60px rgba(57,255,132,0.1);
+    }
+    .crt-img:hover canvas {
+      animation: crt-flicker 0.12s steps(1) forwards;
+    }
+    @keyframes crt-flicker {
+      0%  { filter: grayscale(60%) sepia(30%) hue-rotate(60deg) brightness(0.82) contrast(1.15); }
+      30% { filter: grayscale(60%) sepia(30%) hue-rotate(60deg) brightness(1.1)  contrast(1.15); }
+      60% { filter: grayscale(60%) sepia(30%) hue-rotate(60deg) brightness(0.6)  contrast(1.3);  }
+      100%{ filter: grayscale(60%) sepia(30%) hue-rotate(60deg) brightness(0.82) contrast(1.15); }
+    }
+
+    /* ── IMAGE PROTECTION ─────────────────────────────────────────────────── */
+    img, canvas {
+      -webkit-user-drag: none;
+      user-drag: none;
+      -webkit-user-select: none;
+      user-select: none;
+      pointer-events: none; /* disables right-click on img/canvas directly */
+    }
+    /* Restore pointer events on links that contain images */
+    a img { pointer-events: auto; }
+    /* The crt-img wrapper is the interaction target */
+    .crt-img { pointer-events: auto; cursor: default; }
+    /* Overlay div sits on top of canvas, eats mouse events */
+    .crt-img .img-guard {
+      position: absolute;
+      inset: 0;
+      z-index: 10;
+      cursor: default;
+    }
+  </style>
+</head>
+
+<body>
+<nav class="navbar navbar-inverse navbar-static-top" role="navigation">
+  <div class="container">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar"></span>
+      </button>
+    </div>
+    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+      <ul class="nav navbar-nav">
+        <li><a href="./">home</a></li>
+        <li><a href="research">research</a></li>
+        <li><a href="scicomm">scicomm &amp; teaching</a></li>
+        <li><a href="aboutme">about</a></li>
+        <li><a href="values">values</a></li>
+        <li><a href="CVpage">cv</a></li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+<div class="container">
+  <div class="row">
+    <div class="col-md-8">
+      <div class="content-panel">
+        <div class="panel-header">
+          <span class="dot dot-r"></span><span class="dot dot-y"></span><span class="dot dot-g"></span>
+          &nbsp;research.md<span class="cursor"></span>
+        </div>
+        <p class="page-title">Research</p>
+        <p style="text-align:center;color:var(--text-dim);font-family:var(--font-st);font-size:12px;letter-spacing:1px;margin-bottom:28px;">// a summary of research endeavors and collaborative work</p>
+
+        <div class="research-block">
+          <p class="section-title">Formation of black hole inspirals in accretion disks around supermassive black holes
+            <br><a class="arxiv-btn" href="https://arxiv.org/abs/2205.10382" target="_blank">arXiv:2205.10382</a>
+          </p>
+          <figure>
+            <div class="crt-img" data-src="image-wm-removebg-preview-modified.png" data-width="400"></div>
+            <figcaption>cartoon of an AGN</figcaption>
+          </figure>
+          <p>Star formation can occur in massive accretion disks in Active Galactic Nuclei, producing unique stellar populations which seed sources of gravitational waves, including extreme mass ratio inspirals. I've developed a comprehensive model of the formation of these sources, starting with solutions for the structure of accretion disks that become gravitationally unstable.</p>
+          <p>This work demonstrates the significance of this formation channel, quantifying how <span class="emph">low-frequency gravitational wave sources born in accretion disks may constitute a substantial fraction of events detected by space-based detectors</span>.</p>
+          <p>Due to their evolution in a gaseous environment, the orbital characteristics of these systems will be substantially different from similar events that form via dynamical interactions in dry nuclei. A primary focus of my work is to develop the framework to detect these sources and analyze their waveforms, especially because <span class="emph">their detection will provide constraints on accretion disk environments which are spatially unresolvable to electromagnetic observations</span>.</p>
+          <figure>
+            <div class="crt-img" data-src="gizmo_disk-modified-removebg-preview.png" data-width="400"></div>
+            <figcaption>Simulation of an accretion disk (0.1 parsec scale) around an MBH</figcaption>
+          </figure>
+          <p>To start with the initial stage, I am working with Simona Pacuraru (University of Birmingham) alongside Noah Kubli and Lucio Mayer (University of Zurich) to model the first stages of fragmentation in an AGN disk. Simona has developed beautiful simulations using <a href="http://www.tapir.caltech.edu/~phopkins/Site/GIZMO.html">GIZMO-MFM</a> that provide the initial mass of fragments (nascent protostars), their growth rates, and their orbital trajectories.</p>
+        </div>
+
+        <div class="research-block">
+          <p class="section-title">Theoretical work in preparation for a space-based gravitational wave observatory
+            <br><a class="arxiv-btn" href="https://arxiv.org/abs/2203.06016" target="_blank">arXiv:2203.06016</a>
+            <a class="arxiv-btn" href="https://arxiv.org/abs/2402.07571" target="_blank">arXiv:2402.07571</a>
+          </p>
+          <figure>
+            <a href="https://www.elisascience.org/articles/lisa-consortium">
+              <div class="crt-img" data-src="Logo_LISA_Consortium-modified.png" data-width="120"></div>
+            </a>
+          </figure>
+          <p>I am an active member of the LISA Astrophysics Working Group in the <a href="https://lisa.pages.in2p3.fr/consortium-userguide/g_lsg.html">LISA Science Group</a>. Our white paper, recently published in <a href="https://link.springer.com/article/10.1007/s41114-022-00041-y">Living Reviews in Relativity</a>, outlines the capabilities of the LISA mission for driving astrophysical discoveries. You can also check out the official LISA Definition Study report — AKA the <a href="https://www.cosmos.esa.int/web/lisa/lisa-redbook">Red Book</a>.</p>
+          <figure>
+            <div class="crt-img" data-src="discsim.png" data-width="300"></div>
+            <figcaption>Gas morphology of an accretion disk with an embedded 'black hole'</figcaption>
+          </figure>
+          <p>I am currently coordinating one of the first Astro Working Group collaborative projects on a simulation comparison for black hole binary evolution in accretion disks. Not all simulations find the same results, so it is critical to compare our techniques to better understand the tools we use to predict the fate of this system: <i>will the binary shrink to the scale where it becomes a powerful gravitational wave source? If so, what will its orbital properties be? Can the gas dynamics produce informative electromagnetic or gravitational wave signatures?</i></p>
+        </div>
+
+        <div class="research-block">
+          <p class="section-title">Detectability of environmental imprints and eccentricity in milliHz GWs from massive black hole binaries
+            <br><a class="arxiv-btn" href="https://arxiv.org/abs/2206.05292" target="_blank">arXiv:2206.05292</a>
+            <a class="arxiv-btn" href="https://arxiv.org/abs/2307.13367" target="_blank">arXiv:2307.13367</a>
+            <a class="arxiv-btn" href="https://arxiv.org/abs/2402.14058" target="_blank">arXiv:2402.14058</a>
+          </p>
+          <p>The evolution of supermassive black hole binaries in gas-rich environments is widely studied for both electromagnetic search campaigns and GW predictions. For binaries that coalesce in the LISA frequency band, interaction with surrounding gas can leave imprints on the waveform, as shown by <a href="https://muditgarg96.github.io/">Mudit Garg</a> (UZH). Environmental interactions can also excite eccentricity in the binary, which, if measurable, can provide deeper insight into how massive black hole binaries form in their respective environments.</p>
+        </div>
+
+        <div class="research-block">
+          <p class="section-title">Characteristic signatures of accretion disks in gravitational waves
+            <br><a class="arxiv-btn" href="https://arxiv.org/abs/2206.05292" target="_blank">arXiv:2206.05292</a>
+            <a class="arxiv-btn" href="https://arxiv.org/abs/2005.11333" target="_blank">arXiv:2005.11333</a>
+            <a class="arxiv-btn" href="https://arxiv.org/abs/1810.03623" target="_blank">arXiv:1810.03623</a>
+          </p>
+          <figure>
+            <div class="crt-img" data-src="torqueevol-modified-removebg-preview.png" data-width="400"></div>
+            <figcaption>Comparing gas torques during a gravitational wave inspiral</figcaption>
+          </figure>
+          <p>Gas-embedded black hole inspirals experience torques from their environment that are sensitive to poorly-constrained gas properties. With a suite of hydrodynamical simulations, I find that these torques can impart unique imprints in the gravitational waveforms, which presents an opportunity to <span class="emph">probe accretion disks solely with gravitational waves</span>.</p>
+          <p>Interaction with gas can be present in the waveforms of extreme or intermediate mass ratio inspirals as well as binaries of intermediate mass black holes (<span class="emph">environmental effects are relevant for more than just EMRI sources!</span>), demonstrated in recent works with <a href="https://muditgarg96.github.io/">Mudit Garg</a>.</p>
+        </div>
+
+        <div class="research-block">
+          <p class="section-title">Time-variable torques on BH inspirals
+            <br><a class="arxiv-btn" href="https://arxiv.org/abs/2110.09097" target="_blank">arXiv:2110.09097</a>
+            <a class="arxiv-btn" href="https://arxiv.org/abs/2405.05698" target="_blank">arXiv:2405.05698</a>
+          </p>
+          <p>My simulation studies found that torques on embedded black holes can fluctuate on short timescales. This motivated a study with <a href="https://lorenzzwick96.github.io/">Lorenz Zwick</a> to calculate the effect of high frequency torque variability on disk-embedded binaries, which can produce <span class="emph">multiharmonic and multiband GW emission</span>. This is particularly relevant for EMRIs in turbulent accretion disks, or for more massive SMBH binaries surrounded by circumbinary disks.</p>
+        </div>
+
+        <div class="research-block">
+          <p class="section-title">Supermassive black hole binary evolution in circumbinary disks
+            <br><a class="arxiv-btn" href="https://arxiv.org/abs/1911.05506" target="_blank">arXiv:1911.05506</a>
+          </p>
+          <p>The interaction of a binary with a surrounding gas disk leads to variable accretion and torques, which has critical implications for the evolution of supermassive black hole binaries during gas-driven hardening stages. A suite of simulations led by <a href="https://www.physics.purdue.edu/news/2021/0121_duffell_newfaculty.html">Paul Duffell</a> demonstrate how this torque is sensitive to the binary and disc parameters. These systems are prime candidates for electromagnetic signatures associated with GW emission — read our <a href="https://arxiv.org/abs/1903.04417">Astro2020 white paper</a>.</p>
+        </div>
+
+        <div class="research-block">
+          <p class="section-title">The role of radiative shocks for dust formation in novae
+            <br><a class="arxiv-btn" href="https://arxiv.org/abs/1610.02401" target="_blank">arXiv:1610.02401</a>
+          </p>
+          <figure>
+            <div class="crt-img" data-src="nova-removebg-preview.png" data-width="400"></div>
+            <figcaption>Schematic of nova ejecta: different viewing angles explain observational diversity</figcaption>
+          </figure>
+          <p>Increasing evidence supports that shocks are ubiquitous in nova outflows and are responsible for powering nova emission across the electromagnetic spectrum. In this work I showed that these shocks can be <em>radiative</em>, producing regions in the ejecta that compress and cool rapidly, which creates prime sites for dust formation. This <span class="emph">explains the puzzle of early dust formation</span> in these violent eruptions — check out our <a href="https://arxiv.org/abs/1903.08134">Astro2020 white paper</a>.</p>
+        </div>
+
+      </div>
+    </div>
+    <div class="col-md-4">
+      <div class="sidebar-panel">
+        <div class="sidebar-name">Andrea<br>Derdzinski</div>
+        <div class="sidebar-pronoun">she / they</div>
+        <div class="email-field">aderdzinski [at] fisk [dot] edu</div>
+        <ul class="sidebar-links">
+          <li><a href="https://ui.adsabs.harvard.edu/search/q=orcid%3A0000-0001-9880-8929&sort=date%20desc%2C%20bibcode%20desc&p_=0">NASA ADS Search</a></li>
+          <li><a href="https://orcid.org/0000-0001-9880-8929">ORCiD</a></li>
+          <li><a href="CV_ADerdzinski.pdf">CV (pdf)</a></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<script>
+  // Block right-click on images and canvases
+  document.addEventListener('contextmenu', function(e) {
+    if (e.target.tagName === 'IMG' || e.target.tagName === 'CANVAS') {
+      e.preventDefault();
+    }
+  });
+</script>
+
+<script>
+  /* CRT Pixelation — target block size: 4px
+     Each image auto-calculates its pixscale so pixel blocks are
+     visually consistent regardless of the source image resolution. */
+  var TARGET_BLOCK = 4;
+
+  function applyCRT(el) {
+    var src   = el.dataset.src;
+    var dispW = parseInt(el.dataset.width) || 320;
+    if (!src) return;
+    var img = new Image();
+    img.onload = function() {
+      var aspect = img.naturalHeight / img.naturalWidth;
+      var dispH  = Math.round(dispW * aspect);
+
+      // Calculate pixscale so each block = TARGET_BLOCK screen pixels
+      // tinyW = dispW / TARGET_BLOCK  →  pixscale = tinyW / naturalWidth
+      var tinyW = Math.max(2, Math.round(dispW / TARGET_BLOCK));
+      var tinyH = Math.max(2, Math.round(dispH / TARGET_BLOCK));
+
+      var small = document.createElement('canvas');
+      small.width = tinyW; small.height = tinyH;
+      var sc = small.getContext('2d');
+      sc.imageSmoothingEnabled = false;
+      sc.drawImage(img, 0, 0, tinyW, tinyH);
+
+      var display = document.createElement('canvas');
+      display.width  = dispW; display.height = dispH;
+      display.style.width  = dispW + 'px';
+      display.style.height = dispH + 'px';
+      var dc = display.getContext('2d');
+      dc.imageSmoothingEnabled = false;
+      dc.drawImage(small, 0, 0, dispW, dispH);
+
+      el.appendChild(display);
+
+      var guard = document.createElement('div');
+      guard.className = 'img-guard';
+      guard.addEventListener('contextmenu', function(e){ e.preventDefault(); });
+      guard.addEventListener('dragstart',   function(e){ e.preventDefault(); });
+      el.appendChild(guard);
+    };
+    img.src = src;
+  }
+
+  document.querySelectorAll('.crt-img[data-src]').forEach(applyCRT);
+  document.addEventListener('contextmenu', function(e) {
+    if (e.target.tagName === 'IMG' || e.target.tagName === 'CANVAS') e.preventDefault();
+  });
+</script>
+</body>
+</html>

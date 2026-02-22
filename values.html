@@ -1,0 +1,390 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Share+Tech+Mono&family=VT323&family=Fira+Mono:wght@400;700&display=swap" rel="stylesheet">
+  <title>Andrea | Values & Writing</title>
+  <style>
+    :root{--bg:#0d0d0d;--bg2:#111;--panel:#131313;--border:#252525;--green:#39ff84;--green-dim:#1c6e3d;--amber:#ffa200;--cyan:#00e5ff;--magenta:#ff2d78;--purple:#bd87ff;--text:#c8c8c8;--text-dim:#555;--white:#f0f0f0;--font-mono:'Fira Mono','Courier New',monospace;--font-vt:'VT323',monospace;--font-st:'Share Tech Mono',monospace;}
+    *,*::before,*::after{box-sizing:border-box;}
+    html{scroll-behavior:smooth;}
+    body{font-family:var(--font-mono);font-size:14px;color:var(--text);background-color:var(--bg);background-image:repeating-linear-gradient(0deg,transparent,transparent 2px,rgba(255,255,255,0.01) 2px,rgba(255,255,255,0.01) 4px);margin:0;min-height:100vh;}
+    body::before{content:'';position:fixed;inset:0;background:repeating-linear-gradient(to bottom,transparent 0px,transparent 3px,rgba(0,0,0,0.12) 3px,rgba(0,0,0,0.12) 4px);pointer-events:none;z-index:9999;opacity:0.3;}
+    h1,h2,h3{font-family:var(--font-vt);color:var(--green);letter-spacing:2px;margin-top:0;}
+    p{line-height:1.8;margin-bottom:1em;}
+    ul,ol{line-height:1.8;}
+    a:link{color:var(--green);font-weight:bold;text-decoration:none;}
+    a:visited{color:var(--green-dim);}
+    a:hover{color:var(--amber);text-shadow:0 0 8px rgba(255,162,0,0.5);transition:all 0.15s;}
+    img{max-width:100%;max-height:100%;}
+
+    /* NAVBAR */
+    .navbar-inverse{background-color:var(--bg2);border-bottom:1px solid var(--green-dim);border-radius:0;margin-bottom:0;box-shadow:0 2px 20px rgba(57,255,132,0.06);}
+    .navbar-inverse .navbar-brand,.navbar-inverse .navbar-nav>li>a{font-family:var(--font-st);color:var(--text-dim)!important;letter-spacing:1px;font-size:13px;transition:color 0.15s,text-shadow 0.15s;}
+    .navbar-inverse .navbar-nav>li>a:hover,.navbar-inverse .navbar-nav>.active>a{color:var(--green)!important;background-color:transparent!important;text-shadow:0 0 8px rgba(57,255,132,0.45);}
+    .navbar-nav>li:first-child>a::before{content:'~/';color:var(--green-dim);margin-right:2px;}
+
+    /* LAYOUT */
+    .container{max-width:960px;padding-top:32px;padding-bottom:48px;}
+
+    /* SIDEBAR (contact) */
+    .sidebar-panel{background:var(--panel);border:1px solid var(--border);border-top:2px solid var(--amber);padding:20px;font-size:13px;}
+    .sidebar-name{font-family:var(--font-vt);font-size:28px;color:var(--white);letter-spacing:2px;line-height:1.1;margin-bottom:4px;}
+    .sidebar-pronoun{font-family:var(--font-st);font-size:11px;color:var(--text-dim);letter-spacing:2px;margin-bottom:14px;}
+    .sidebar-links{list-style:none;padding:0;margin:0;}
+    .sidebar-links li{padding:5px 0;border-bottom:1px solid var(--border);}
+    .sidebar-links li:last-child{border-bottom:none;}
+    .sidebar-links li::before{content:'> ';color:var(--green-dim);font-family:var(--font-st);}
+    .email-field{font-family:var(--font-st);font-size:11px;color:var(--cyan);background:rgba(0,229,255,0.05);border:1px solid rgba(0,229,255,0.18);padding:6px 10px;margin:12px 0;word-break:break-all;letter-spacing:0.5px;}
+
+    /* ── POST INDEX PANEL ─────────────────────── */
+    .post-index-panel {
+      background: var(--panel);
+      border: 1px solid var(--border);
+      border-top: 2px solid var(--magenta);
+      padding: 0;
+      margin-bottom: 16px;
+    }
+    .post-index-header {
+      font-family: var(--font-st);
+      font-size: 10px;
+      color: var(--text-dim);
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      padding: 10px 14px;
+      border-bottom: 1px solid var(--border);
+    }
+    .post-index-header .dot{display:inline-block;width:7px;height:7px;border-radius:50%;margin-right:4px;}
+    .post-list {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+      display: flex;
+      flex-wrap: wrap;
+    }
+    .post-list li {
+      border-bottom: none;
+      border-right: 1px solid var(--border);
+    }
+    .post-list li:last-child { border-right: none; }
+    .post-list li a {
+      display: block;
+      padding: 10px 14px;
+      font-family: var(--font-st);
+      font-size: 12px;
+      color: var(--text-dim) !important;
+      font-weight: normal !important;
+      letter-spacing: 0.5px;
+      transition: color 0.15s, background 0.15s;
+      line-height: 1.4;
+    }
+    .post-list li a:hover {
+      color: var(--white) !important;
+      background: rgba(255,255,255,0.03);
+      text-shadow: none !important;
+    }
+    .post-list li a.active {
+      color: var(--magenta) !important;
+      background: rgba(255,45,120,0.05);
+      border-bottom: 2px solid var(--magenta);
+      padding-bottom: 8px;
+    }
+    .post-list li a .post-date {
+      display: block;
+      font-size: 10px;
+      color: var(--text-dim);
+      margin-top: 2px;
+      letter-spacing: 1px;
+    }
+    .post-list li a.active .post-date { color: rgba(255,45,120,0.6); }
+
+    /* ── CONTENT PANEL ────────────────────────── */
+    .content-panel {
+      background: var(--panel);
+      border: 1px solid var(--border);
+      border-top: 2px solid var(--green-dim);
+      padding: 28px 32px;
+      margin-bottom: 16px;
+    }
+    .panel-header {
+      font-family: var(--font-st);
+      font-size: 11px;
+      color: var(--text-dim);
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      border-bottom: 1px solid var(--border);
+      padding-bottom: 10px;
+      margin-bottom: 24px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+    .dot{display:inline-block;width:8px;height:8px;border-radius:50%;margin-right:2px;}
+    .dot-r{background:var(--magenta);}.dot-y{background:var(--amber);}.dot-g{background:var(--green);}
+    .filename-label { flex: 1; }
+    .cursor::after{content:'█';color:var(--green);animation:blink 1s step-end infinite;font-size:0.8em;}
+    @keyframes blink{50%{opacity:0;}}
+
+    /* Post sections — only one visible at a time */
+    .post-section { display: none; }
+    .post-section.active {
+      display: block;
+      animation: fadein 0.25s ease;
+    }
+    @keyframes fadein { from { opacity:0; transform:translateY(6px); } to { opacity:1; transform:translateY(0); } }
+
+    /* Post title */
+    .post-title {
+      font-family: var(--font-vt);
+      font-size: 38px;
+      color: var(--magenta);
+      letter-spacing: 2px;
+      line-height: 1.1;
+      margin-bottom: 6px;
+      text-shadow: 0 0 20px rgba(255,45,120,0.2);
+    }
+    .post-meta {
+      font-family: var(--font-st);
+      font-size: 11px;
+      color: var(--text-dim);
+      letter-spacing: 1.5px;
+      margin-bottom: 28px;
+      padding-bottom: 16px;
+      border-bottom: 1px solid var(--border);
+    }
+
+    /* Value items (for the strategies post) */
+    .value-item{margin-bottom:28px;padding-left:16px;border-left:2px solid var(--magenta);}
+    .value-num{font-family:var(--font-vt);font-size:22px;color:var(--magenta);margin-bottom:2px;}
+    .value-header{font-size:14px;color:var(--magenta);font-weight:bold;margin-bottom:8px;font-family:var(--font-mono);}
+    .emph{font-weight:bold;color:var(--cyan);}
+
+    /* Footer note */
+    .post-footer-note {
+      margin-top: 32px;
+      color: var(--text-dim);
+      font-size: 11px;
+      font-family: var(--font-st);
+      letter-spacing: 0.5px;
+    }
+
+    footer{text-align:center;padding:32px 0 16px;font-family:var(--font-st);font-size:10px;color:var(--text-dim);letter-spacing:2px;}
+    footer::before{content:'──────────────────────────────────────────────────';display:block;color:var(--border);margin-bottom:12px;overflow:hidden;}
+    @media(max-width:768px){.sidebar-panel{margin-top:24px;}.container{padding-top:20px;}}
+  </style>
+</head>
+
+<body>
+
+<nav class="navbar navbar-inverse navbar-static-top" role="navigation">
+  <div class="container">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar"></span>
+      </button>
+    </div>
+    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+      <ul class="nav navbar-nav">
+        <li><a href="./">home</a></li>
+        <li><a href="research">research</a></li>
+        <li><a href="scicomm">scicomm &amp; teaching</a></li>
+        <li><a href="aboutme">about</a></li>
+        <li><a href="values">values</a></li>
+        <li><a href="CVpage">cv</a></li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+<div class="container">
+  <div class="row">
+
+    <!-- ── LEFT col-md-8: writings index + content ── -->
+    <div class="col-md-8">
+
+      <!-- Writings index on top -->
+      <div class="post-index-panel">
+        <div class="post-index-header">
+          <span class="dot dot-r"></span><span class="dot dot-y"></span><span class="dot dot-g"></span>
+          &nbsp;writings/
+        </div>
+        <ul class="post-list">
+
+          <!-- ════════════════════════════════════
+               ADD NEW POSTS HERE — copy one <li>
+               block, give it a unique data-post id
+               matching the post-section div below.
+               Most recent post first.
+               ════════════════════════════════════ -->
+
+          <li>
+            <a href="#" class="post-link" data-post="comingsoon">
+              Other thoughts
+              <span class="post-date">— to be added —</span>
+            </a>
+          </li>
+
+          <li>
+            <a href="#" class="post-link active" data-post="strategies">
+              Academic Emergent Strategies
+              <span class="post-date">Dec 2024</span>
+            </a>
+          </li>
+
+        </ul>
+      </div>
+
+      <!-- Post content below index -->
+      <div class="content-panel">
+
+        <div class="panel-header">
+          <span class="dot dot-r"></span><span class="dot dot-y"></span><span class="dot dot-g"></span>
+          <span class="filename-label" id="active-filename">strategies.txt<span class="cursor"></span></span>
+        </div>
+
+
+        <!-- ══════════════════════════════════════════
+             POST 1: Academic Emergent Strategies
+             ══════════════════════════════════════════ -->
+        <div class="post-section active" id="post-strategies">
+
+          <div class="post-title">Academic Emergent Strategies<sup style="font-size:0.4em;vertical-align:super;">*</sup></div>
+          <div class="post-meta">written Dec 2024 &nbsp;·&nbsp; perpetual draft</div>
+
+          <p>I find it important to incorporate my personal values into my daily work. Academia is a historically elitist and exclusionary system, and many of the standard demands of our career are antithetical to the reason we sought this position — to build a range of interpretations and collective understanding of the world (or the Universe, a lofty goal for the astrophysicists). Here are some practices I try to implement into my work as a scientist, in order to show up fully and hopefully contribute towards small cultural shifts in my local environment.</p>
+
+          <p>I am nowhere near an expert on Making Academia Amazing and Inclusive for Everyone, and these thoughts are not necessarily unique or revolutionary. They are bite-size practices that have given me joy or relief in contrast to the outcome of competition and sacrifice often asked by academia.</p>
+
+          <p>Aside from my personal experience, I find inspiration through connections and conversations with others in this field, as well as the work of organizers and authors addressing social justice and community care. These include:
+          <ul>
+            <li><a href="https://www.akpress.org/beyond-survival.html">Beyond Survival</a> — Ejeris Dixon &amp; Leah Lakshmi Piepzna-Samarasinha, 2020</li>
+            <li><a href="https://btlbooks.com/book/higher-expectations">Higher Expectations: How to Survive Academia, Make it Better for Others, and Transform the University</a> — Roberta Hawkins &amp; Leslie Kern, 2024</li>
+            <li><a href="https://www.akpress.org/emergentstrategy.html">Emergent Strategy</a> — adrienne maree brown, 2017</li>
+            <li><a href="https://www.akpress.org/practicing-new-worlds.html">Practicing New Worlds</a> — Andrea J. Ritchie, 2023</li>
+          </ul>
+          </p>
+
+          <p style="font-size:12px;color:var(--magenta);font-family:var(--font-st);letter-spacing:0.5px;"><span style="font-size:16px;">*</span> As described by adrienne maree brown and Andrea Ritchie, we can begin to envision a new world by exercising shifts in <i>how</i> we do things, rather than trying to change from top-down the systems that we are a part of.</p>
+
+          <div style="margin-top:32px;">
+
+            <div class="value-item">
+              <div class="value-num">01.</div>
+              <div class="value-header">Create room for our full authentic selves to show up in the workplace.</div>
+              <p>We are much more than our science, yet we tend to leave these parts of ourselves at the door when we step into the office. Inevitably, our personal lives affect how we show up, what support we need at various times to reach our goals and deadlines, our capacity for focus and meetings, and ultimately our ability to do the science we are here for in the first place.</p>
+              <p>Allow introductions in group meetings and conferences to include personal truths. This is of course optional, and people should choose what or if they'd like to share. When we know our peers more closely, we open the opportunity to relate to each other and connect in ways that enhance our science identity.</p>
+              <p>This sentiment extends to collaborators and visitors. I have found that introducing seminar speakers beyond their CV helps to build personal connection in the room — people in a more connected audience may pay more attention and retain a clearer memory of the event.</p>
+            </div>
+
+            <div class="value-item">
+              <div class="value-num">02.</div>
+              <div class="value-header">Present work in progress.</div>
+              <p>There is a culture of gatekeeping our results in progress or rushing to finish a work before a conference in order to claim it as our own. But we also know that our ideas do not develop in isolation, and conversations with each other build our collective understanding. I find it refreshing to share and learn about work in progress with those outside my collaborator network. This adds transparency to the way we approach our research and allows for incorporating diverse interpretations of our results.</p>
+              <p>Some people will choose to scoop your work anyway. Regardless, all of our work would benefit from sharing ideas and data, and working collectively with less urgency.</p>
+            </div>
+
+            <div class="value-item">
+              <div class="value-num">03.</div>
+              <div class="value-header">Embrace many modes of contribution.</div>
+              <p>The majority of our work falls under the umbrella of project management, which entails a set of skills we are not explicitly taught. Think: coordinating large-scale projects with collaborators worldwide, advising student projects, scheduling grant writing, organizing effective conferences. There is an often unrealistic expectation for all of us to be experts at a variety of things, while in reality we can embrace our strengths and work with others to build stronger networks. Some skills that may resonate:</p>
+              <ul>
+                <li>placing research questions into the bigger picture</li>
+                <li>getting into the nitty gritty details of a derivation</li>
+                <li>developing organizational structures for data, software, project notes</li>
+                <li>communicating methodology, findings, and caveats to different audiences</li>
+                <li>running effective meetings with insightful discussion, collective input, and not taking too long (!)</li>
+              </ul>
+            </div>
+
+            <div class="value-item">
+              <div class="value-num">04.</div>
+              <div class="value-header">Practice a nonexclusionary, nonhierarchical collaboration structure.</div>
+              <p>This applies to the science we do: those with less experience in a field can arrive with a fresh perspective and challenge us to revisit fundamental questions we take for granted.</p>
+              <p>And how we do the science: iterative feedback from all group members, including students, in how a meeting structure or class works for them can improve these events for everyone. Just because a thing has worked in the past does not mean it will always be the best option.</p>
+            </div>
+
+            <div class="value-item">
+              <div class="value-num">05.</div>
+              <div class="value-header">Integrate room for play.</div>
+              <p>Many aspects of scientific research require creativity. Contrary to the limited picture of a Totally Objective and Logical Science Guy in a Lab Coat, we ponder things we don't understand, design effective visualizations, develop innovative interpretations, draw connections, and construct ways of interpreting the world. Studies show that play enhances creativity. Here I define play as practicing an activity that is not focused on a particular outcome — crafting, freewriting, exploring outside. A 10-minute break before a group meeting can energize busy minds, making room for new ideas. Consider building physical representations of how black holes interact with gas, or brainstorming the analogy between a chorus of cicadas and an anisotropic stochastic gravitational wave background (personal examples).</p>
+            </div>
+
+          </div>
+
+          <p class="post-footer-note">// Just as our research is iterative and ever-growing, this list is also a perpetual draft. I would love to hear from others about what supports you in your career and life balance, and how you envision a sustainable future for scientific exploration.</p>
+
+        </div><!-- /post-strategies -->
+
+
+        <!-- ══════════════════════════════════════════
+             POST 2: PLACEHOLDER — replace this whole
+             block with your next writing. Change the
+             id to match the data-post in the index.
+             ══════════════════════════════════════════ -->
+        <div class="post-section" id="post-comingsoon">
+
+          <div class="post-title">[under construction]</div>
+          <div class="post-meta">— draft —</div>
+
+          <p style="color:var(--text-dim);font-family:var(--font-st);font-size:12px;letter-spacing:1px;">
+            // Be patient with me. I have lots of thoughts that take time to make it to the internet void.<br>
+    
+          </p>
+
+        </div><!-- /post-placeholder -->
+
+
+      </div><!-- /content-panel -->
+    </div><!-- /col-md-8 -->
+
+    <!-- ── RIGHT col-md-4: contact sidebar ─────── -->
+    <div class="col-md-4">
+      <div class="sidebar-panel">
+        <div class="sidebar-name">Andrea<br>Derdzinski</div>
+        <div class="sidebar-pronoun">she / they</div>
+        <div class="email-field">aderdzinski [at] fisk [dot] edu</div>
+        <ul class="sidebar-links">
+          <li><a href="https://ui.adsabs.harvard.edu/search/q=orcid%3A0000-0001-9880-8929&sort=date%20desc%2C%20bibcode%20desc&p_=0">NASA ADS Search</a></li>
+          <li><a href="https://orcid.org/0000-0001-9880-8929">ORCiD</a></li>
+          <li><a href="CV_ADerdzinski.pdf">CV (pdf)</a></li>
+        </ul>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+
+<script>
+  // ── Post switcher ────────────────────────────────────────────────────────
+  // Maps data-post value → filename shown in the panel header
+  var filenames = {
+    'strategies': 'strategies.txt',
+    'placeholder': 'new_post.txt'
+    // Add entries here as you add posts: 'post-id': 'filename.txt'
+  };
+
+  $(document).on('click', '.post-link', function(e) {
+    e.preventDefault();
+    var target = $(this).data('post');
+
+    // Update index highlight
+    $('.post-link').removeClass('active');
+    $(this).addClass('active');
+
+    // Update filename in header
+    $('#active-filename').html((filenames[target] || target + '.txt') + '<span class="cursor"></span>');
+
+    // Swap content
+    $('.post-section').removeClass('active');
+    $('#post-' + target).addClass('active');
+  });
+</script>
+
+</body>
+</html>
