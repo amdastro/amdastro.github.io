@@ -1,6 +1,14 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+<script>
+(function(){
+  try {
+    if (localStorage.getItem('theme') === 'light')
+      document.documentElement.classList.add('light');
+  } catch(e) {}
+})();
+</script>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
@@ -9,9 +17,7 @@
   <link href="https://fonts.googleapis.com/css2?family=Share+Tech+Mono&family=VT323&family=Fira+Mono:wght@400;700&display=swap" rel="stylesheet">
 
   <!-- ════════════════════════════════════════════════════════════════════
-       PAGE TITLE — currently "Values & Writing." Consider renaming to
-       "Writing" or "Notes" or "Essays" if that better fits the vibe.
-       The nav label is already updated to "writing" below.
+       PAGE TITLE 
        ════════════════════════════════════════════════════════════════════ -->
   <title>Andrea | Writing</title>
 
@@ -72,7 +78,87 @@
     footer{text-align:center;padding:32px 0 16px;font-family:var(--font-st);font-size:10px;color:var(--text-dim);letter-spacing:2px;}
     footer::before{content:'──────────────────────────────────────────────────';display:block;color:var(--border);margin-bottom:12px;overflow:hidden;}
     @media(max-width:768px){.sidebar-panel{margin-top:24px;}.container{padding-top:20px;}}
-  </style>
+  
+    /* ══════════════════════════════════════════════════════════════════════
+       LIGHT MODE 
+       ══════════════════════════════════════════════════════════════════════ */
+    html.light {
+      --bg:        #f4f1ec;
+      --bg2:       #ede8e0;
+      --panel:     #faf8f4;
+      --border:    #cfc8bc;
+      --green:     #1a7a45;
+      --green-dim: #4a9e6b;
+      --amber:     #b06d00;
+      --cyan:      #0069a0;
+      --magenta:   #a0223e;
+      --purple:    #5c3494;
+      --text:      #2c2720;
+      --text-dim:  #857870;
+      --white:     #1a1512;
+    }
+    /* kill the CRT scanline overlays in light mode */
+    html.light body {
+      background-image: none !important;
+    }
+    html.light body::before {
+      display: none !important;
+    }
+    /* navbar */
+    html.light .navbar-inverse {
+      background-color: var(--bg2) !important;
+      border-bottom: 1px solid var(--border) !important;
+      box-shadow: 0 1px 6px rgba(0,0,0,0.08) !important;
+    }
+    /* arxiv / chip buttons */
+    html.light .arxiv-btn {
+      background: rgba(0,105,160,0.07) !important;
+      border-color: rgba(0,105,160,0.28) !important;
+    }
+    html.light .arxiv-btn:hover {
+      background: rgba(0,105,160,0.14) !important;
+    }
+    /* email chip */
+    html.light .email-field {
+      background: rgba(0,105,160,0.06) !important;
+      border-color: rgba(0,105,160,0.22) !important;
+    }
+    /* sub-nav tabs */
+    html.light .sub-nav {
+      border-bottom-color: var(--border) !important;
+    }
+    html.light .sub-nav-btn:hover {
+      background: rgba(0,0,0,0.04) !important;
+    }
+
+    /* ══ THEME TOGGLE BUTTON ════════════════════════════════════════════════ */
+    .theme-toggle {
+      display: block;
+      width: 100%;
+      margin-top: 16px;
+      padding: 7px 10px;
+      font-family: var(--font-st);
+      font-size: 11px;
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+      color: var(--text-dim);
+      background: transparent;
+      border: 1px solid var(--border);
+      cursor: pointer;
+      text-align: left;
+      transition: color 0.15s, border-color 0.15s, background 0.15s;
+    }
+    .theme-toggle:hover {
+      color: var(--text);
+      border-color: var(--text-dim);
+      background: rgba(128,128,128,0.06);
+    }
+    .theme-toggle .toggle-icon {
+      color: var(--amber);
+      margin-right: 4px;
+    }
+
+</style>
 </head>
 
 <body>
@@ -263,15 +349,15 @@ For me, intentionality mostly looks like paying attention to the how in my own w
           </p>
 
           <p>
-When we talk about making science more inclusive, more accessible, more equitable, we are still largely talking about bringing more people into an existing framework. This is worthwhile, but it doesn't go far enough if we never stop to ask whether the framework itself is the only valid one. Human beings have been interpreting the natural world for as long as we have existed. Indigenous communities developed sophisticated understandings of ecology, medicine, astronomy, and land systems over thousands of years. This knowledge was accumulated carefully, tested against experience, revised across generations, and encoded in language, practice, and story. People consider this primitive thinking waiting to be validated by a peer-reviewed journal, but it could instead be valued as a different way of asking what counts as knowledge, who gets to produce it, and how it should be held and shared. Western science has not only failed to incorporate these knowledge systems. In many cases it has actively suppressed, dismissed, or extracted from them while refusing to credit them as legitimate. That history should make us a little more humble about the confidence with which we treat our current methods as the definitive way of knowing.
+When we talk about making science more inclusive, more accessible, more equitable, we are still largely talking about bringing more people into an existing framework. That matters, but it doesn't go far enough if we never stop to ask whether the framework itself is the only valid one. Human beings have been interpreting the natural world for as long as we have existed. Indigenous communities developed sophisticated understandings of ecology, medicine, astronomy, and land systems over thousands of years. This knowledge was accumulated carefully, tested against experience, revised across generations, and encoded in language, practice, and story. People consider this primitive thinking waiting to be validated by a peer-reviewed journal, but it could instead be valued as a different way of asking what counts as knowledge, who gets to produce it, and how it should be held and shared. Western science has not only failed to incorporate these knowledge systems. In many cases it has actively suppressed, dismissed, or extracted from them while refusing to credit them as legitimate. That history should make us a little more humble about the confidence with which we treat our current methods as the definitive way of knowing.
           </p>
 
           <p>
-We do not evolve as a species in a straight line. Knowledge accumulates, but it also gets lost, paradigms shift, and things we were certain about get overturned. And there are ways of understanding the world that have survived and served human communities across centuries that we have barely begun to take seriously. Mostly because they don't look like what we've decided rigor looks like, or they don't fit the same shapes of our personally-constructed sieves.
+We do not evolve as a species in a straight line. Knowledge accumulates, but it also gets lost. Paradigms shift. Things we were certain about get overturned. And there are ways of understanding the world that have survived and served human communities across centuries that we have barely begun to take seriously. Mostly because they don't look like what we've decided rigor looks like, or they don't fit the same shapes of our personally-constructed sieves.
           </p>
 
           <p>
-When I talk about expanding our field to include more perspectives, I mean something deeper than access to papers or seats in lecture halls. What I mean is, who decides what counts as understanding in the first place? Whose questions get treated as the serious ones? Whose ways of knowing get incorporated into the project at all?  If the knowledge we generate about the physical world is, at its core, knowledge about the world everyone inhabits, then the question of who gets to participate in generating it (and who gets to benefit from it) seems like it should be higher on the list. What is the point of exploring the fundamental nature of the Universe if only a select few people get to understand it?
+When I talk about expanding our field to include more perspectives, I mean something deeper than access to papers or seats in lecture halls. I mean: who decides what counts as understanding in the first place? Whose questions get treated as the serious ones? Whose ways of knowing get incorporated into the project at all?  If the knowledge we generate about the physical world is, at its core, knowledge about the world everyone inhabits, then the question of who gets to participate in generating it (and who gets to benefit from it) seems like it should be higher on the list. What is the point of exploring the fundamental nature of the Universe if only a select few people get to understand it?
           </p>
 
           <p>
@@ -294,6 +380,8 @@ I don't have or expect any clean answer for this, but I think that those of us w
           <li><a href="https://orcid.org/0000-0001-9880-8929">ORCiD</a></li>
           <li><a href="CV_ADerdzinski.pdf">CV (pdf)</a></li>
         </ul>
+        <button id="theme-btn" class="theme-toggle"><span class="toggle-icon">◐</span>light mode</button>
+
       </div>
     </div>
 
@@ -317,6 +405,22 @@ I don't have or expect any clean answer for this, but I think that those of us w
     $('.post-section').removeClass('active');
     $('#post-' + target).addClass('active');
   });
+</script>
+<script>
+(function(){
+  var btn = document.getElementById('theme-btn');
+  if (!btn) return;
+  function sync() {
+    var light = document.documentElement.classList.contains('light');
+    btn.innerHTML = '<span class="toggle-icon">◐</span>' + (light ? 'dark mode' : 'light mode');
+  }
+  sync();
+  btn.addEventListener('click', function(){
+    var light = document.documentElement.classList.toggle('light');
+    try { localStorage.setItem('theme', light ? 'light' : 'dark'); } catch(e) {}
+    sync();
+  });
+})();
 </script>
 </body>
 </html>
